@@ -26,16 +26,16 @@ res.json({ id: result.insertId });
 router.put("/api/burgers/:id", (req, res) => {
     var status = "id = " + req.params.id;
 
-    console.log("condition", status);
+console.log("condition", status);
 
-    burger.update(
-        {devoured: req.body.devoured},
-        status, (result) => {
-            if (result.changedRows ==0) {
-                return res.status(404).end();
-            } else {
-                res.status(200).end();
-            }
+burger.update(
+{devoured: req.body.devoured},
+status, (result) => {
+if (result.changedRows ==0) {
+return res.status(404).end();
+} else {
+res.status(200).end();
+}
         });
 });
 
